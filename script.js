@@ -1,3 +1,40 @@
+function playRound(playerSelection, computerSelection) {
+    function playerChoice() {
+        let playerEntry = prompt("Choose a hand.");
+        return playerEntry.charAt(0).toUpperCase() + playerEntry.substring(1).toLowerCase();
+    }
+    playerSelection = playerChoice();
+    console.log("You chose " + playerSelection);
+
+    function computerChoice() {
+        let handChoices = ["Rock", "Paper", "Scissors"];
+        handResult = Math.floor(Math.random() * handChoices.length);
+        //console.log(handChoices[handResult]);
+        return handChoices[handResult]
+    }
+    computerSelection = computerChoice();
+    console.log("Your opponent chose " + computerSelection);
+
+    if (playerSelection == computerSelection) {
+        console.log("Draw. Choose again.");
+    }
+    if (playerSelection == "Rock" && computerSelection == "Scissors" ||
+        playerSelection == "Paper" && computerSelection == "Rock" ||
+        playerSelection == "Scissors" && computerSelection == "Paper") {
+        console.log("You win!");
+    }
+    if (playerSelection == "Rock" && computerSelection == "Paper" ||
+        playerSelection == "Paper" && computerSelection == "Scissors" ||
+        playerSelection == "Scissors" && computerSelection == "Rock") {
+        console.log("You lose!");
+    }
+}
+
+playRound();
+
+/*
+OLD ANSWER
+
 // computer
 let compAnswer = "";
 
@@ -36,7 +73,7 @@ while (userTest == 0) {
 }
 
 
-// comparison
+// result comparison
 function gameResult() {
     if (compHand == playerHand) {
         console.log("You both chose the same hand. Please choose again.");
@@ -57,8 +94,8 @@ function gameResult() {
     }
 }
 
-
-// result
+// print result
 console.log("You chose " + playerHand);
 console.log("Your opponent chose " + compHand);
 gameResult();
+*/
