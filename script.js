@@ -1,11 +1,12 @@
 const choices = ["Rock", "Paper", "Scissors"];
-const playerSelection = prompt("Choose rock, paper, or scissors");
 let i = 0;
 let playerHand;
 let cpuHand;
 let playerScore = 0;
 let cpuScore = 0;
 
+while (playerScore < 5 && cpuScore < 5) {
+const playerSelection = prompt("Choose rock, paper, or scissors");
 for (const choice of choices) {
     playerHand = playerSelection.toLowerCase();
     if (choice.toLowerCase() === playerHand) {
@@ -14,8 +15,10 @@ for (const choice of choices) {
         i++
         break;
     }
-} if (i < 1) {
-    console.log("Choose again.");
+    if (choice.toLowerCase() !== playerHand) {
+        i = 0;
+        playerSelection;
+    }   
 }
 
 function cpuChoice() {
@@ -42,5 +45,7 @@ if (i > 1) {
 } if (i > 2) {
     console.log(`The current score is:
 You: ${playerScore}
-CPU: ${cpuScore}`);
+CPU: ${cpuScore}
+ `);
+}
 }
