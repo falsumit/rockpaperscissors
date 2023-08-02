@@ -6,7 +6,9 @@ let playerScore = 0;
 let cpuScore = 0;
 
 while (playerScore < 5 && cpuScore < 5) {
+
 const playerSelection = prompt("Choose rock, paper, or scissors");
+
 for (const choice of choices) {
     playerHand = playerSelection.toLowerCase();
     if (choice.toLowerCase() === playerHand) {
@@ -48,4 +50,5 @@ You: ${playerScore}
 CPU: ${cpuScore}
  `);
 }
+
 }
