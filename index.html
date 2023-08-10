@@ -4,27 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
     <title>Rock Paper Scissors</title>
 </head>
 <body>
     <div id="page-container">
-        <section id="navigation">
-            <h1>Rock Paper Scissors</h1>
-            <p>Choose rock, paper, or scissors.</p>
+        <section id="nav">
+            <div id="nav-content">
+                <h1>Rock Paper Scissors</h1>
+                <p>Choose rock, paper, or scissors.</p>
+            </div>
         </section>
-        <section id="rps-select">
-            <div class="rps-choice" id="rps-rock">
-                <img src="/Sources/rock.jpg" alt="rock">
-                <p class="rps-text">Rock</p>
+        <section id="rps">
+            <div id="rps-choice-grid">
+                <div class="rps-choice">
+                    <div class="rps-choice-content" id="Rock">
+                        <img src="\\wsl.localhost\Ubuntu\home\brooks\Documents\repos\javascript\rockpaperscissors\Sources\rock.jpg" alt="rock">
+                        <p class="rps-text">Rock</p>
+                    </div>
+                </div>
+                <div class="rps-choice" >
+                    <div class="rps-choice-content" id="Paper">
+                        <img src="\\wsl.localhost\Ubuntu\home\brooks\Documents\repos\javascript\rockpaperscissors\Sources\paper.jpg" alt="rock">
+                        <p class="rps-text">Paper</p>
+                    </div>
+                </div>
+                <div class="rps-choice">
+                    <div class="rps-choice-content" id="Scissors">
+                        <img src="\\wsl.localhost\Ubuntu\home\brooks\Documents\repos\javascript\rockpaperscissors\Sources\scissors.jpg" alt="rock">
+                        <p class="rps-text">Scissors</p>
+                    </div>
+                </div>
             </div>
-            <div class="rps-choice" id="rps-paper">
-                <img src="/Sources/paper.jpg" alt="rock">
-                <p class="rps-text">Paper</p>
-            </div>
-            <div class="rps-choice" id="rps-scissors">
-                <img src="/Sources/scissors.jpg" alt="rock">
-                <p class="rps-text">Scissors</p>
+        </section>
+        <section id="result">
+            <div id="result-score">
+                <h2>Score</h2>
+                <p id="result-round"></p>
+                <p id="summary"></p>
+                <p id="score-player">Your score: 0</p>
+                <p id="score-cpu">CPU score: 0</p>
             </div>
         </section>
     </div>

@@ -1,64 +1,43 @@
-
-
-
-
-
-
-
-
-/* OLD CODE
-const choices = ["Rock", "Paper", "Scissors"];
-let i = 0;
+const handChoice = ["Rock", "Paper", "Scissors"];
 let playerHand;
-let cpuHand;
 let playerScore = 0;
 let cpuScore = 0;
 
-while (playerScore < 5 && cpuScore < 5) {
-
-const playerSelection = prompt("Choose rock, paper, or scissors");
-
-for (const choice of choices) {
-    playerHand = playerSelection.toLowerCase();
-    if (choice.toLowerCase() === playerHand) {
-        playerHand = choice;
-        console.log(`You chose ${choice}.`);
-        i++
-        break;
-    }
-    if (choice.toLowerCase() !== playerHand) {
-        i = 0;
-        playerSelection;
-    }   
-}
+const roundResult = document.querySelector('p#result-round');
+const scoreSummary = document.querySelector('p#summary');
+const playerTally = document.querySelector('p#score-player');
+const cpuTally = document.querySelector('p#score-cpu');
 
 function cpuChoice() {
-    cpuHand = choices[(Math.floor(Math.random() * choices.length))];
-} if (i > 0) {
+    cpuHand = handChoice[(Math.floor(Math.random() * handChoice.length))];
+} 
+
+function printResults() {
     cpuChoice();
-    console.log(`Your oppenent chose ${cpuHand}.`);
-    i++
-}
-
-if (i > 1) {
     if (playerHand === cpuHand) {
-        console.log(`Tie! You both chose ${playerHand}.`);
-    } else if (playerHand == "Rock" && cpuHand == "Paper" ||
-        playerHand == "Paper" && cpuHand == "Scissors" ||
-        playerHand == "Scissors" && cpuHand == "Rock") {
-            console.log("You lose!");
+        roundResult.textContent = "TIE";
+    } else if (playerHand == "Rock" && cpuHand == "Scissors" ||
+        playerHand == "Paper" && cpuHand == "Rock" ||
+        playerHand == "Scissors" && cpuHand == "Paper") {
+            roundResult.textContent = "WIN";
+            playerScore++
+        } else {
+            roundResult.textContent = "LOSE";
             cpuScore++
-    } else {
-        console.log("You win!");
-        playerScore++
-    }
-    i++
-} if (i > 2) {
-    console.log(`The current score is:
-You: ${playerScore}
-CPU: ${cpuScore}
- `);
+        }
+    scoreSummary.textContent = `You chose ${playerHand}. Your opponent chose ${cpuHand}.`;
+    playerTally.textContent = `Your score: ${playerScore}`;
+    cpuTally.textContent = `CPU score: ${cpuScore}`;
 }
 
+const choices = document.querySelectorAll('div.rps-choice-content');
+function getScores() {
+    choices.forEach((choice) => {
+        choice.addEventListener('click', () => {
+            playerHand = choice.id;
+            printResults();
+        });
+    });
 }
-*/
+
+getScores();
