@@ -1,3 +1,12 @@
+
+
+
+
+
+
+
+
+/* OLD CODE
 const choices = ["Rock", "Paper", "Scissors"];
 let i = 0;
 let playerHand;
@@ -52,3 +61,4 @@ CPU: ${cpuScore}
 }
 
 }
+*/

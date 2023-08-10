@@ -3,11 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
-    <title>Document</title>
+    <title>Rock Paper Scissors</title>
 </head>
 <body>
-    <h1>Rock Paper Scissors</h1>
-    <p>Open the console to view results.</p>
+    <div id="page-container">
+        <section id="navigation">
+            <h1>Rock Paper Scissors</h1>
+            <p>Choose rock, paper, or scissors.</p>
+        </section>
+        <section id="rps-select">
+            <div class="rps-choice" id="rps-rock">
+                <img src="/Sources/rock.jpg" alt="rock">
+                <p class="rps-text">Rock</p>
+            </div>
+            <div class="rps-choice" id="rps-paper">
+                <img src="/Sources/paper.jpg" alt="rock">
+                <p class="rps-text">Paper</p>
+            </div>
+            <div class="rps-choice" id="rps-scissors">
+                <img src="/Sources/scissors.jpg" alt="rock">
+                <p class="rps-text">Scissors</p>
+            </div>
+        </section>
+    </div>
 </body>
 </html>
